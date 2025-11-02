@@ -65,7 +65,7 @@ public void reset() {
 
 6. Add the call to `snapshot` as the last action to the `containerIsStarted` method. 
 
-7. Let's test how it works now. Setup the test `PostgresWithTemplatesTest` by creating the `PostgresWithTemplates` container, wiring the `JDBCTemplate`, and configuring the context to use our container:
+7. Let's test how it works now. Set up the test `PostgresWithTemplatesTest` by creating the `PostgresWithTemplates` container, wiring the `JDBCTemplate`, and configuring the context to use our container:
 
 ```java
 static PostgresWithTemplates pg = new PostgresWithTemplates();
