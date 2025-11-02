@@ -101,7 +101,7 @@ try (
 }
 ```
 
-8. Modify the custom image name (to get a clean stat) and run the test several time to compare the execution time on the first run and the next ones. 
+8. Modify the custom image name (to get a clean stat) and run the test several times to compare the execution time on the first run and the next ones. 
 
 9. A nice detail of the `OllamaContainer` module is how it can automatically determine and enable the GPU support on runtimes that support it. 
 This is code from the OllamaContainer class that does this. Learn how you can use Docker Client API and the `withCreateContainerCmdModifier` method to enable it. 
