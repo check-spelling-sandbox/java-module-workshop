@@ -36,7 +36,7 @@ try (OllamaContainer ollama = new OllamaContainer("ollama/ollama:0.1.26")) {
     assertThat(modelName).contains("all-minilm");
 }
 ```
-4. When you run this test the model is being pulled, and when we rerun the test, it will be pulled again, and again.
+4. When you run this test, the model is being pulled, and when we rerun the test, it will be pulled again, and again.
 This is not ideal, so we can use the `commitToImage` method from the `OllamaContainer` to persist the model in a new Docker image.
 See how you can use the lower level Docker Client API to work with the images: 
 
