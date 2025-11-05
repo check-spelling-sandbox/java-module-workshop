@@ -6,7 +6,7 @@ We're going to create tests that use an Ollama module and enhance its lifecycle 
 
 2. Here's an example of code that starts the Ollama module, and accesses its API to ensure it's up and running. 
 Put it into the `OllamaContainerTest` class and make it a test. 
-(Note how containers are `AutoCloseable` so you can spin use `try-with-resources` with them).
+(Note how containers are `AutoCloseable` so you can use `try-with-resources` with them).
 
 ```java
 try (
