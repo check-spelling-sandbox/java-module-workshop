@@ -116,7 +116,7 @@ if (runtimes != null && runtimes.containsKey("nvidia")) {
 }
 ```
 
-10. You can also limit the resources a container has access to like CPU and memory. Here's an example of a test that checks the GC a Java process selects in constrained environments: 
+10. You can also limit the resources for a container like CPU and memory. Here's an example of a test that checks the GC a Java process selects in constrained environments: 
 Add it to your test class, run the test, explore the results. 
 
 ```java
