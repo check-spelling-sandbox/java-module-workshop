@@ -20,7 +20,7 @@ try (
 ```
 
 3. By default, the Ollama Docker images don't have any models inside.
-So if we want to actually use it to run any inference we need to download the model into the container.
+So if we want to actually use it to run an inference we need to download the model into the container.
 Create another test method and download a model into the Ollama container.
 
 ```java
