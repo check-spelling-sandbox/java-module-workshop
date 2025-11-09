@@ -71,7 +71,7 @@ helloworld.start();
 ```
 10. Now we have the application to point our tunnel to, instantiate the `CloudflaredContainer` and point it to the `helloworld.getFirstMappedPort()`;
 
-11. Assuming you have a valus in the `String url = cloudflare.getPublicUrl();` use the following method to try consuming the url (and ignoring the exceptions if the tunnel is declared, but Cloudflare didn't yet provision it).
+11. Assuming you have a value in the `String url = cloudflare.getPublicUrl();` use the following method to try consuming the url (and ignoring the exceptions if the tunnel is declared, but Cloudflare didn't yet provision it).
 Note that we disable the DNS caching, because the domain might not be available during the first attempt, but we want to ignore it and try without cached DNS later.
 
 ```java

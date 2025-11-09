@@ -6,7 +6,7 @@ messages from it.
 1. Annotate `KafkaCatTest` with `@Testcontainers`
 
 > [!NOTE]  
-> `@Tescontainers` will manage lifecycle of containers annotated with `@Container`
+> `@Testcontainers` will manage lifecycle of containers annotated with `@Container`
 
 2. Create a network to connect both containers
 

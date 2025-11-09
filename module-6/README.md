@@ -4,9 +4,9 @@
 
 We're going to create tests that use an Ollama module and enhance its lifecycle so the modified images are cached. 
 
-2. Here's an example of a code that starts the Ollama module, and accesses its API to ensure it's up and running. 
+2. Here's an example of code that starts the Ollama module, and accesses its API to ensure it's up and running. 
 Put it into the `OllamaContainerTest` class and make it a test. 
-(Note how containers are `AutoCloseable` so you can spin use `try-with-resources` with them).
+(Note how containers are `AutoCloseable` so you can use `try-with-resources` with them).
 
 ```java
 try (
@@ -20,7 +20,7 @@ try (
 ```
 
 3. By default, the Ollama Docker images don't have any models inside.
-So if we want to actually use it to run any inference we need to download the model into the container.
+So if we want to actually use it to run an inference we need to download the model into the container.
 Create another test method and download a model into the Ollama container.
 
 ```java
@@ -36,7 +36,7 @@ try (OllamaContainer ollama = new OllamaContainer("ollama/ollama:0.1.26")) {
     assertThat(modelName).contains("all-minilm");
 }
 ```
-4. When you run this test the model is being pulled, and when we rerun the test, it will be pulled again, and again.
+4. When you run this test, the model is being pulled, and when we rerun the test, it will be pulled again, and again.
 This is not ideal, so we can use the `commitToImage` method from the `OllamaContainer` to persist the model in a new Docker image.
 See how you can use the lower level Docker Client API to work with the images: 
 
@@ -101,7 +101,7 @@ try (
 }
 ```
 
-8. Modify the custom image name (to get a clean stat) and run the test a few time to compare the execution time on the first run and the next ones. 
+8. Modify the custom image name (to get a clean stat) and run the test several times to compare the execution time on the first run and the next ones. 
 
 9. A nice detail of the `OllamaContainer` module is how it can automatically determine and enable the GPU support on runtimes that support it. 
 This is code from the OllamaContainer class that does this. Learn how you can use Docker Client API and the `withCreateContainerCmdModifier` method to enable it. 
@@ -116,7 +116,7 @@ if (runtimes != null && runtimes.containsKey("nvidia")) {
 }
 ```
 
-10. You can also limit the resources a container has access to like CPU and memory. Here's an example of a test that checks the GC a Java process selects in constrained environments: 
+10. You can also limit the resources for a container like CPU and memory. Here's an example of a test that checks the GC a Java process selects in constrained environments: 
 Add it to your test class, run the test, explore the results. 
 
 ```java
